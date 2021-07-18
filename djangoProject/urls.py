@@ -23,5 +23,9 @@ urlpatterns = [
     path('', include('scorpion_api.urls')),
     path('', include('teams.urls')),
     path('', include('table.urls')),
-    path('', include('past_games.urls'))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('', include('past_games.urls')),
+    path('', include('images.urls')),
+    path('', include('contact.urls'))
+]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
