@@ -179,4 +179,6 @@ CORS_ORIGIN_WHITELIST = [
      'http://localhost:3000'
 ]
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'] = dj_database_url.config()
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
