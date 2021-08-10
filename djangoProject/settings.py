@@ -28,7 +28,7 @@ SECRET_KEY = 'SECRET_KEY'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://deverscorpions.herokuapp.com/', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -178,3 +178,5 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 CORS_ORIGIN_WHITELIST = [
      'http://localhost:3000'
 ]
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
