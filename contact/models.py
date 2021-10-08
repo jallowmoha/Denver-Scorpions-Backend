@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+# User name, email, message and the time message is sent.  
 
 
 class Contact(models.Model):
